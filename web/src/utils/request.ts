@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from 'axios';
+import { DOMAIN } from './env';
 
 export interface ResponseWrapper<T> {
     code: number;
@@ -22,7 +23,7 @@ declare module 'axios' {
 }
 
 export const request = axios.create({
-    baseURL: 'http://localhost:3000',
+    baseURL: `http://${DOMAIN}:3000`,
     timeout: 1000,
 });
 

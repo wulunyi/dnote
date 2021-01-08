@@ -52,7 +52,10 @@ export class SerialSync {
                 };
             }
 
-            this.socket.emit(...event, callback).once('exception', reject);
+            this.socket
+                .emit(...event, callback)
+                .once('exception', reject)
+                .once('disconnect', reject);
         });
     }
 

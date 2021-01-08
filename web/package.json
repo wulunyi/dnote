@@ -9,7 +9,8 @@
         "clean": "gts clean",
         "fix": "gts fix",
         "build": "webpack --config webpack.config.ts",
-        "dev": "webpack-dev-server"
+        "analyzer": "cross-env NODE_ENV=analyzer webpack --config webpack.config.ts",
+        "dev": "cross-env NODE_ENV=dev webpack-dev-server"
     },
     "keywords": [],
     "author": "",
@@ -27,10 +28,13 @@
         "@types/react-router-dom": "^5.1.6",
         "@types/socket.io-client": "^1.4.34",
         "@types/webpack": "^4.41.22",
+        "@types/webpack-bundle-analyzer": "^3.9.0",
         "@types/webpack-dev-server": "^3.11.0",
         "@typescript-eslint/eslint-plugin": "^4.4.1",
         "@typescript-eslint/parser": "^4.4.1",
         "babel-loader": "^8.1.0",
+        "babel-plugin-import": "^1.13.3",
+        "cross-env": "^7.0.3",
         "css-loader": "^4.3.0",
         "eslint-plugin-react": "^7.21.4",
         "gts": "^2.0.2",
@@ -41,6 +45,7 @@
         "ts-node": "^9.0.0",
         "typescript": "^4.0.3",
         "webpack": "^4.44.2",
+        "webpack-bundle-analyzer": "^4.3.0",
         "webpack-cli": "^3.3.12",
         "webpack-dev-server": "^3.11.0"
     },

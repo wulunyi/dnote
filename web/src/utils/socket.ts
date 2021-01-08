@@ -1,7 +1,8 @@
 import io from 'socket.io-client';
+import { DOMAIN } from './env';
 
 export const getSocket = (function () {
-    const client = io('ws://localhost:3000', {
+    const client = io(`ws://${DOMAIN}:3000`, {
         transports: ['websocket', 'polling'],
     });
 

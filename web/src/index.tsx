@@ -1,7 +1,10 @@
 import { Component } from 'react';
 import ReactDom from 'react-dom';
 import NotePanel from './page';
-import './index.css';
+
+import 'antd/es/button/style';
+import 'antd/es/input/style';
+import 'antd/es/list/style';
 
 class App extends Component {
     static getDerivedStateFromError(error: Error) {

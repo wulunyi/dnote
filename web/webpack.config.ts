@@ -2,14 +2,17 @@ import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import 'webpack-dev-server';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+
+const mode = process.env.NODE_ENV === 'dev' ? 'development' : 'production';
 
 const config: webpack.Configuration = {
-    mode: 'development',
+    mode,
     entry: './src/index.tsx',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: '[name].[hash].bundle.js',
-        publicPath: '/',
+        publicPath: './',
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
@@ -32,7 +35,10 @@ const config: webpack.Configuration = {
                             '@babel/preset-react',
                             '@babel/preset-typescript',
                         ],
-                        plugins: ['@babel/plugin-proposal-class-properties'],
+                        plugins: [
+                            ['babel-plugin-import', { libraryName: 'antd' }],
+                            '@babel/plugin-proposal-class-properties',
+                        ],
                     },
                 },
             },
@@ -59,11 +65,15 @@ const config: webpack.Configuration = {
         }),
         new webpack.ProvidePlugin({ React: 'react' }),
         new webpack.HotModuleReplacementPlugin(),
+        ...(process.env.NODE_ENV === 'analyzer'
+            ? [new BundleAnalyzerPlugin()]
+            : []),
     ],
     devServer: {
         open: true,
         port: 9000,
         historyApiFallback: true,
+        publicPath: '/',
     },
 };
 
