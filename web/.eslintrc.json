@@ -1,0 +1,15 @@
+{
+    "extends": [
+        "./node_modules/gts/",
+        "plugin:react/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "rules": {
+        "react/react-in-jsx-scope": 0,
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+    },
+    "env": {
+        "browser": true,
+        "node": true
+    }
+}

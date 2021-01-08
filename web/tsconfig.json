@@ -1,0 +1,24 @@
+{
+    "extends": "./node_modules/gts/tsconfig-google.json",
+    "compilerOptions": {
+        "rootDir": ".",
+        "moduleResolution": "node",
+        "outDir": "build",
+        "esModuleInterop": true,
+        "jsx": "preserve",
+        "allowSyntheticDefaultImports": true,
+        "lib": [
+            "DOM"
+        ]
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "test/**/*.ts",
+    ],
+    "references": [
+        {
+            "path": "../server"
+        }
+    ]
+}

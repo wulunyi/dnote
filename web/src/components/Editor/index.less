@@ -1,0 +1,56 @@
+.editor__menu {
+    display: flex;
+    align-items: center;
+
+    .w-e-menu {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+.editor__menu-category {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.editor__menu-category--item {
+    display: inline-block;
+    margin-right: 10px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+
+    &:last-child {
+        margin: 0;
+    }
+}
+
+.editor__menu-line {
+    margin-left: 20px;
+    display: inline-block;
+    height: 20px;
+    width: 1px;
+    background: #dddddd;
+}
+
+.editor__menu-side {
+    flex: 1;
+}
+
+.editor__note-time {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 14px;
+    color: #dddddd;
+}
+
+.editor__note-time--day-tip {
+    margin-right: 5px;
+    font-weight: bold;
+    color: #000000;
+}
